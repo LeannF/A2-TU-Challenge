@@ -8,24 +8,39 @@ namespace TU_Challenge
 {
     public class MyStringImplementation
     {
-        public static string BazardString(string input)
+        public static string BazardString(string a)
         {
-            throw new NotImplementedException();
-        }
+            string? str = "";
+            string? str2 = "";
 
+            for (int i = 0; i < a.Length; i++)
+            {
+                if ((i % 2) == 0)
+                {
+                    str += a[i];
+                }
+                else
+                {
+                    str2 += a[i];
+                }
+            }
+            str += str2;
+            return str;
+        }
         public static bool IsNullEmptyOrWhiteSpace(string a)
         {
             if (a == null || a.Length <1)
             {
                 return true;
-
             }
             else
             {
                 foreach (char item in a)
                 {
-                    if (item != ' ') 
+                    if (item != ' ')
+                    {
                         return false;
+                    }
                 }
                 return true;
             }
@@ -56,12 +71,16 @@ namespace TU_Challenge
             }
             return c;
         }
-
         public static string Reverse(string a)
         {
-            throw new NotImplementedException();
-        }
+            string? str = "";
 
+            for (int i = a.Length - 1; i >= 0; i--)
+            {
+                str += a[i];
+            }
+            return str;
+        }
         public static string ToLowerCase(string a)
         {
             string? str = "";
@@ -82,12 +101,17 @@ namespace TU_Challenge
             }
             return str;
         }
-
-        public static string UnBazardString(string input)
+        public static string UnBazardString(string a)
         {
-            throw new NotImplementedException();
-        }
+            string? str = "";
 
+            for (int i = 0; i < a.Length / 2; i++)
+            {
+                str += a[i];
+                str += a[i + a.Length / 2];
+            }
+            return str;
+        }
         public static string Voyelles(string a)
         {
             a = ToLowerCase(a);
